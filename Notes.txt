@@ -1,0 +1,62 @@
+use mongoBasics
+	use selected database (e.g. mongoBasics)
+
+show dbs
+	show local databases
+
+db.post.insert({title: “horray!”})
+	insert a JSON data to “post” collection
+
+show collections
+	show all collection in current database
+
+db.post.find()[index]
+	find data in selected collection (post)
+
+db.collectionName.find().limit(2)
+	limit records to 2
+
+ls()
+	check content of current directory
+
+load(‘./seed.js’)
+	load “seed” file to databse
+
+
+
+db.collectionName.count()
+	number of records in the selected collection
+
+var itemName = db.collectionName.find(0)[1];
+itemName.propertyname
+	assign JSON object to variable and access the said property
+
+db.getCollectionNames()
+	will return collections of the current db (select a db first)
+
+db.collectionName.getIndexes()
+	will return index field of the selected collection
+
+db.collectionName.createIndex({keyName: incrementValue/decrementValue})
+	create a key as index and set it as incremental or decremental (1 or -1)
+
+db.collectionName.dropIndex(‘indexName’)
+	delete selected index from selected collection
+
+db.collectionName.findOne()
+	returns the first record from the selected collection
+
+db.colNme.find({}, {body: false, description: false})
+	returns a record with no body and description fields
+
+db.colNme.find({}, {body: true})
+	returns a record with  body only
+
+db.colNme.find({body: valueTxt }, {body: true})
+	returns a record with  body only and specif value of body
+
+db.colNme.find({$or [{body: valueTxt },{body: anotherValue}]}, {body: true})
+	returns a record with  body only and either value of body
+
+
+
