@@ -1,3 +1,6 @@
+$ npm install -g mongo-hacker
+
+
 use mongoBasics
 	use selected database (e.g. mongoBasics)
 
@@ -59,4 +62,21 @@ db.colNme.find({$or [{body: valueTxt },{body: anotherValue}]}, {body: true})
 	returns a record with  body only and either value of body
 
 
+db.colName.update({foreignField: objectId("123456")}, {$set: {tags:['foo', 'bar'], title: 'change this'} })
+    this will update the value of 'tags' and 'title' key of the said record (ObjectID)
 
+
+Object.keys(db.colNme.find()[0])
+    will return keys of the first record of the selected collection
+
+
+db.colNme.find({}, {keyName: true}).sort({keyName: ascOrDescValue})
+    sort result in either asc (1) or desc(-1) order
+
+
+db.colNme.find({}, {keyName: true}).sort({keyName: ascOrDescValue}).limit(2)
+    sort result in either asc (1) or desc(-1) order and limit to only 2 
+
+
+db.colNme.find({}, {keyName: true}).sort({keyName: ascOrDescValue}).limit(2).skip(2)
+    sort result in either asc (1) or desc(-1) order and limit to only 2 and skip the first 2
