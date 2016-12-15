@@ -90,5 +90,3 @@ $ mongorestore --db databaseName --drop folderName
 $ mongoredtore --db mean-todo --drop ../new/mean-todo
 	restore mongo db
 	
-
-Backup 
