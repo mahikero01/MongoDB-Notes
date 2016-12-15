@@ -80,3 +80,15 @@ db.colNme.find({}, {keyName: true}).sort({keyName: ascOrDescValue}).limit(2)
 
 db.colNme.find({}, {keyName: true}).sort({keyName: ascOrDescValue}).limit(2).skip(2)
     sort result in either asc (1) or desc(-1) order and limit to only 2 and skip the first 2
+
+
+$ mongodump --db dataBaseName --out folderLocation
+$ mongodump --db mean-todo --out new
+	backup mongo db
+
+$ mongorestore --db databaseName --drop folderName
+$ mongoredtore --db mean-todo --drop ../new/mean-todo
+	restore mongo db
+	
+
+Backup 
